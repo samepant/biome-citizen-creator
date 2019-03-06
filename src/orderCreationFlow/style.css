@@ -1,0 +1,92 @@
+.order-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3em;
+}
+
+.form-item {
+  width: 100%;
+  margin: 3vh 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.center label {
+  margin-right: 2vh;
+}
+
+.box label {
+  display: block;
+  text-align: center;
+  margin-bottom: 2vh;
+}
+
+.box-options {
+  display: flex;
+  justify-content: center;
+}
+
+.option {
+  cursor: pointer;
+  border: 0.5vh dashed;
+  padding: 1vw;
+}
+
+.option:last-child {
+  margin-left: 3vw;
+}
+
+.option:hover {
+  background: aliceblue;
+}
+
+.active {
+  border: 1vh solid green;
+}
+
+input[type=text] {
+  color: inherit;
+  border: none;
+  border-bottom: 0.5vh solid;
+  font-size: inherit;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+input[type=number] {
+  color: inherit;
+  border: none;
+  border-bottom: 0.5vh solid;
+  font-size: inherit;
+  max-width: 7vw;
+}
+
+input[type=number]:focus {
+  outline: none;
+}
+
+button {
+  font-size: inherit;
+  color: inherit;
+  border: 0.5vh solid;
+  padding: 1vh;
+  cursor: pointer;
+  margin: 3vh 0;
+}
+
+button:focus {
+  outline: none;
+}
+
+.order-form button:hover {
+  background: magenta;
+  color: white;
+  border: 0.5vh solid magenta;
+}

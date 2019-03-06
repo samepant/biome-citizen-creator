@@ -1,0 +1,77 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 2vw;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+#App {
+  height: 100%;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.header {
+  margin: 0;
+  padding: 2vw;
+  font-size: 3vw;
+  font-weight: 400;
+  border: 1vh solid rebeccapurple;
+  color: rebeccapurple;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-nav {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+}
+
+.nav-button {
+  width: 50%;
+  text-align: center;
+  color: blue;
+  border: 1vh solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.create {
+  color: magenta;
+}
+
+.document {
+  color: lime;
+}
+
+.nav-button.create:hover {
+  color: white;
+  background: magenta;
+}
+
+.nav-button.document:hover {
+  color: white;
+  background: lime;
+}
+
+.exit {
+  cursor: pointer;
+  color: red;
+}
+
+.sub-container {
+  border: 1vh solid;
+  flex: 1;
+}
