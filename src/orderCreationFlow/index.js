@@ -1,6 +1,8 @@
 import React from 'react';
 
+import MnemonicLinker from './mnemonicLinker';
 import OrderForm from './orderForm';
+import Photographer from './orderPhotographer';
 
 export default class index extends React.Component {
   constructor(props) {
@@ -19,9 +21,13 @@ export default class index extends React.Component {
     };
 
     this.onChange = this.onChange.bind(this);
-    this.handleNext = this.handleNext.bind(this);
+    this.handleOrderNext = this.handleOrderNext.bind(this);
     this.handleDrink = this.handleDrink.bind(this);
     this.handleDish = this.handleDish.bind(this);
+    this.handlePhotographNext = this.handlePhotographNext.bind(this);
+    this.handleImg = this.handleImg.bind(this);
+    this.handleMnemonic = this.handleMnemonic.bind(this);
+    this.handleMnemonicNext = this.handleMnemonicNext.bind(this);
   }
 
   onChange(e) {
@@ -37,13 +43,10 @@ export default class index extends React.Component {
     });
   }
 
-  handleNext(e) {
+  handleOrderNext(e) {
     e.preventDefault();
-    this.props.gun.get('orders').set({
-      name: this.state.name,
-      orderNumber: this.state.orderNumber,
-      orderType: this.state.orderType,
-      hasDrink: this.state.hasDrink,
+    this.setState({
+      orderRecorded: true,
     });
   }
 
@@ -59,6 +62,30 @@ export default class index extends React.Component {
     });
   }
 
+  handleImg(base64) {
+    this.setState({
+      orderImage: base64,
+    });
+  }
+
+  handlePhotographNext() {
+    this.setState({
+      sampleRecorded: true,
+    });
+  }
+
+  handleMnemonic(mnemonicCode) {
+    this.setState({
+      mnemonic: mnemonicCode,
+    });
+  }
+
+  handleMnemonicNext() {
+    this.setState({
+      mnemonicLinked: true
+    });
+  }
+
   render() {
     return (
       <div>
@@ -71,8 +98,17 @@ export default class index extends React.Component {
             handleDish={this.handleDish}
             hasDrink={this.state.hasDrink}
             handleDrink={this.handleDrink}
-            handleNext={this.handleNext}
+            handleNext={this.handleOrderNext}
           />
+        }
+        {(this.state.orderRecorded && !this.state.sampleRecorded) &&
+          <Photographer handleNext={this.handlePhotographNext} handleImg={this.handleImg} />
+        }
+        {(this.state.sampleRecorded && !this.state.mnemonicLinked) &&
+          <MnemonicLinker handleNext={this.handleMnemonicNext} handleMnemonic={this.handleMnemonic} />
+        }
+        {this.state.mnemonicLinked &&
+          <h2>FINSIHED</h2>
         }
       </div>
     );

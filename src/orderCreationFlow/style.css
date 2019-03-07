@@ -90,3 +90,48 @@ button:focus {
   color: white;
   border: 0.5vh solid magenta;
 }
+
+.photographer video {
+  display: block;
+  width: 62vw;
+  height: auto;
+  margin: 7vh auto;
+}
+
+.button-box {
+  display: flex;
+  justify-content: center;
+  margin: 2vh auto;
+}
+
+.button-box button:last-child {
+  margin-left: 5vw;
+}
+
+.photographer img {
+  display: block;
+  width: 62vw;
+  height: auto;
+  margin: 7vh auto;
+}
+
+.mnemonic {
+  padding-top: 5vh;
+}
+
+.mnemonic h2 {
+  text-align: center;
+  font-weight: 400;
+}
+
+.mnemonic video {
+  display: block;
+  width: 70vw;
+  height: auto;
+  margin: -4vh auto;
+}
+
+.mnemonic .code-phrase {
+  font-size: 5vw;
+  margin: 15vh 0;
+}

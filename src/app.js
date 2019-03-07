@@ -55,17 +55,17 @@ export default class App extends React.Component {
         { this.state.toplevel &&
           <div className="main-nav">
             <div className="nav-button create" onClick={this.enterOrderCreation}>Create order</div>
-            <div className="nav-button document" onClick={this.enterFoodDoc}>Document order</div>
+            <div className="nav-button document" onClick={this.enterFoodDoc}>Photograph order</div>
           </div>
         }
         { this.state.creatingOrder &&
           <div className="create sub-container">
-            <OrderCreationFlow gun={this.gun} />
+            <OrderCreationFlow gun={this.gun} exit={this.goTopLevel} />
           </div>
         }
         { this.state.addingFoodDoc &&
           <div className="document sub-container">
-            <OrderDocumentationFlow gun={this.gun} />
+            <OrderDocumentationFlow gun={this.gun} exit={this.goTopLevel} />
           </div>
         }
       </div>
